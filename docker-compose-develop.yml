@@ -1,0 +1,16 @@
+version: "3"
+
+services:
+  app:
+    build:
+      context: ./app
+      dockerfile: Dockerfile-develop
+    restart: "no"
+    command:
+      - "pytest"
+      - "-v"
+      - "/opt/app/tests"
+    volumes:
+      - "./coredns/etcdctl:/bin/etcdctl"
+      - "./app:/opt/app"
+

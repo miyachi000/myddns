@@ -1,0 +1,4 @@
+bottle
+etcd3
+pytest
+uwsgi

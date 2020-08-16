@@ -1,0 +1,21 @@
+.:53 {
+  reload 10s
+  cache 30
+  forward . 8.8.8.8 9.9.9.9
+  errors
+  log . {
+    class denial error
+  }
+  health :8081
+  ready :8181
+}
+
+miyanet.local:53 {
+  errors
+  log . {
+    class denial error
+  }
+  etcd {
+    endpoint http://etcd:2379
+  }
+}
